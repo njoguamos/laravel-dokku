@@ -1,0 +1,19 @@
+{
+    "scripts": {
+        "dokku": {
+            "predeploy": "",
+            "postdeploy": ""
+        },
+        "postdeploy": ""
+    },
+    "healthchecks": {
+        "web": [
+            {
+                "name": "default",
+                "type": "startup",
+                "port": 80,
+                "uptime": 10
+            }
+        ]
+    }
+}
