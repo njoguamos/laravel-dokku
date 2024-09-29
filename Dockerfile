@@ -47,6 +47,4 @@ RUN npm run build
 RUN composer dump-autoload --optimize
 
 # Prepare the laravel app
-RUN php /var/www/html/artisan optimize:clear \
-    && php /var/www/html/artisan optimize \
-    && php /var/www/html/artisan storage:link
+RUN php /var/www/html/artisan storage:link
