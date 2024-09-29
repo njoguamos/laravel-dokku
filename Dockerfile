@@ -35,11 +35,13 @@ RUN composer install --no-dev --prefer-dist --no-scripts --no-autoloader --no-pr
 
 # Install node dependencies -> remove this if you do not need NodeJS
 COPY --chown=www-data:www-data package.json ./
-RUN npm install --frozen-lockfile \
-    && npm run build
+RUN npm install --frozen-lockfile
 
 # Copy the app files to the container
 COPY --chown=www-data:www-data . .
+
+# Build node dependencies -> remove this if you do not need NodeJS
+RUN npm run build
 
 # Autoload files
 RUN composer dump-autoload --optimize
