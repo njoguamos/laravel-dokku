@@ -13,7 +13,8 @@
                 "description": "Checking if the laravel app container is up and running.",
                 "type": "startup",
                 "port": 8080,
-                "uptime": 10
+                "uptime": 10,
+                "timeout": 20
             }
         ],
         "scheduler": [
@@ -21,7 +22,7 @@
                 "name": "scheduler-health",
                 "description": "Checking if the laravel scheduler container is up and running.",
                 "type": "startup",
-                "command": "php /var/www/html/artisan schedule:test --name=inspire",
+                "command": ["php", "/var/www/html/artisan", "schedule:test", "--name=inspire"],
                 "timeout": 10
             }
         ],
@@ -30,7 +31,7 @@
                 "name": "horizon-health",
                 "description": "Checking if the laravel horizon container is up and running.",
                 "type": "startup",
-                "command": "php /var/www/html/artisan horizon:status",
+                "command": ["php", "/var/www/html/artisan", "horizon:status"],
                 "timeout": 10
             }
         ]
