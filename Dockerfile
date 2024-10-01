@@ -8,6 +8,9 @@ ARG NODE_VERSION=20
 # that comes with the base image
 ENV AUTORUN_ENABLED=false
 
+# Allow HTTP and HTTPS.
+ENV SSL_MODE=mixed
+
 # Switch to root so we can do root things
 USER root
 
