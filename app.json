@@ -1,8 +1,8 @@
 {
     "scripts": {
         "dokku": {
-            "predeploy": "php /var/www/html/artisan optimize:clear && php /var/www/html/artisan optimize",
-            "postdeploy": ""
+            "predeploy": "php /var/www/html/artisan optimize:clear",
+            "postdeploy": "php /var/www/html/artisan optimize"
         },
         "postdeploy": ""
     },
@@ -11,7 +11,7 @@
             {
                 "name": "default",
                 "type": "startup",
-                "port": 80,
+                "port": 8080,
                 "uptime": 10
             }
         ]
